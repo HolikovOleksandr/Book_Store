@@ -5,7 +5,7 @@ namespace Book_Store.Models
 {
     public class Category
     {
-        [Key] 
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -13,8 +13,9 @@ namespace Book_Store.Models
         [DisplayName("Category Name")]
         public string Name { get; set; }
 
-        [Range(0, 100)]
-        [DisplayName("Display Order")] 
+        [Required]
+        [Range(0, 100, ErrorMessage = "Display order must be betwen 1-100")]
+        [DisplayName("Display Order")]
         public int DisplayOrder { get; set; }
     }
 }

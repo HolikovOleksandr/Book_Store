@@ -1,6 +1,6 @@
-﻿using Book_Store.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Book_Store.Configuration;
 using Book_Store.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Book_Store.Data
 {
