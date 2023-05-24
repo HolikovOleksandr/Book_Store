@@ -9,7 +9,7 @@ namespace Book_Store.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(30)]
+        [MaxLength(20)]
         [DisplayName("Category Name")]
         public string Name { get; set; }
 
