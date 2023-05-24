@@ -1,0 +1,34 @@
+﻿@model List<Category>
+
+<div class="container" 
+        <div class="col-6">
+            <h2 class="text-primary">
+                Category List
+            </h2>
+        </div>
+
+<table class="table table-bordered table-striprd">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Display Order</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var item in Model.OrderBy(u => u.DisplayOrder))
+            {
+                <tr>
+                    <td> @item.Name </td>
+                    <td> @item.DisplayOrder </td>
+                </tr>
+            }
+    </tbody>
+</table>
+        @*BUTONS*@
+        <div class="row">
+            <div class="text-end">
+                <a asp-controller="Category" asp-action="Create" class="btn btn-primary rounded">
+                    <i class="bi bi-plus-circle"></i> Add</a>
+            </div>
+        </div>
+</div>
