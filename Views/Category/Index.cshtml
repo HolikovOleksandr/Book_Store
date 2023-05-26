@@ -1,5 +1,8 @@
 ﻿@model List<Category>
-
+@if(TempData["success"] != null)
+{
+    <h4>@TempData["success"]</h4>
+}
 <div class="container">
 
     @*TITLE*@

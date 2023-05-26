@@ -11,8 +11,8 @@ namespace Book_Store.Controllers
 
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _db.Categories.ToList();
-            return View(objCategoryList);
+            List<Category> categoryList = _db.Categories.ToList();
+            return View(categoryList);
         }
 
         public IActionResult Create() => View();
@@ -33,6 +33,7 @@ namespace Book_Store.Controllers
             {
                 _db.Categories.Add(newCategory);
                 _db.SaveChanges();
+                TempData["success"] = "Category created successfully";
                 return RedirectToAction("Index");
             }
 
@@ -56,6 +57,7 @@ namespace Book_Store.Controllers
             {
                 _db.Categories.Update(editCategory);
                 _db.SaveChanges();
+                TempData["success"] = "Category updated successfully";
                 return RedirectToAction("Index");
             }
 
@@ -80,6 +82,7 @@ namespace Book_Store.Controllers
 
             _db.Categories.Remove(findingCatrgory);
             _db.SaveChanges();
+            TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
         }
     }
